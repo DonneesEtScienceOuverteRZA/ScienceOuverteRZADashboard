@@ -1,0 +1,9 @@
+streamlit
+pandas
+numpy<2
+plotly
+pyDataverse
+selenium
+beautifulsoup4
+markdownify
+fpdf
