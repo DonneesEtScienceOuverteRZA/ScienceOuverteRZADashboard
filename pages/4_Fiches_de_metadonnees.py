@@ -206,8 +206,8 @@ fi = glob.glob(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_clean*.csv")
 
 st.title(':grey[Visualisation des fiches]')
 
-st.success("Si vous le souhaitez, filtrer le réseau ciblé (RZA ou OHM) (par défaut, tout apparait) / CASE A COCHER")
-st.success("Si vous le souhaitez, filtrer le groupe (ZA ou OHM) ciblé (par défaut, tout apparait) / LISTE DEROULANTE")
+#st.success("Si vous le souhaitez, filtrer le réseau ciblé (RZA ou OHM) (par défaut, tout apparait) / CASE A COCHER")
+st.success("Si vous le souhaitez, filtrer la zone atelier ciblée (par défaut, tout le RZA) / LISTE DEROULANTE")
 
 # Si oui, on récupère le dernier enregistré ; si non, on récupère les identifiants à la date donnée
 if len(fi)!=0:
@@ -451,47 +451,47 @@ df_complet.to_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_complet.csv")
 ########### SELECTION ZA #############################################################################################
 ######################################################################################################################
 ## Le choix est exclusif ###############################################################################
-if 'checkbox1' not in st.session_state:
-    st.session_state.checkbox1 = False
-if 'checkbox2' not in st.session_state:
-    st.session_state.checkbox2 = False
+#if 'checkbox1' not in st.session_state:
+#    st.session_state.checkbox1 = False
+#if 'checkbox2' not in st.session_state:
+#    st.session_state.checkbox2 = False
 
 # Function to handle checkbox1 change
-def handle_checkbox1_change():
-    if st.session_state.checkbox1:
-        st.session_state.checkbox2 = False
+#def handle_checkbox1_change():
+#    if st.session_state.checkbox1:
+#        st.session_state.checkbox2 = False
 
 # Function to handle checkbox2 change
-def handle_checkbox2_change():
-    if st.session_state.checkbox2:
-        st.session_state.checkbox1 = False
+#def handle_checkbox2_change():
+#    if st.session_state.checkbox2:
+#        st.session_state.checkbox1 = False
 
-st.sidebar.markdown('Sélection en cours')
-col1,col2 =st.sidebar.columns(2)
-choix_groupe_OHM = False
-with col1:
-    checkbox1 = st.checkbox("RZA", key='checkbox1', on_change=handle_checkbox1_change)
-with col2:
-    checkbox2 = st.checkbox("OHM", key='checkbox2', on_change=handle_checkbox2_change)
+#st.sidebar.markdown('Sélection en cours')
+#col1,col2 =st.sidebar.columns(2)
+#choix_groupe_OHM = False
+#with col1:
+#    checkbox1 = st.checkbox("RZA", key='checkbox1', on_change=handle_checkbox1_change)
+#with col2:
+#    checkbox2 = st.checkbox("OHM", key='checkbox2', on_change=handle_checkbox2_change)
 
 
-if checkbox1:
-    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_ZAs)
-    if len(selection_group)==0:
-        selection_group = liste_ZAs 
-    selected_uuids = df_complet['Identifiant'][df_complet['GroupeEtMention'].isin(selection_group)]
-    selected_uuids_ = selected_uuids.reset_index(drop=True)
-    st.sidebar.metric('Nombre de fiches:',len(selected_uuids_))
-elif checkbox2:
-    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
-    if len(selection_group)==0:
-        selection_group = liste_OHMs
-    selected_uuids = df_complet['Identifiant'][df_complet['GroupeEtMention'].isin(selection_group)]
-    selected_uuids_ = selected_uuids.reset_index(drop=True)
-    st.sidebar.metric('Nombre de fiches:',len(selected_uuids_))
-else:
-    selected_uuids_ = df_complet['Identifiant'].values
-    st.sidebar.metric('Nombre de fiches:',len(selected_uuids_))
+#if checkbox1:
+selection_group = st.sidebar.multiselect('Zones Ateliers',options=liste_ZAs)
+if len(selection_group)==0:
+    selection_group = liste_ZAs 
+selected_uuids = df_complet['Identifiant'][df_complet['GroupeEtMention'].isin(selection_group)]
+selected_uuids_ = selected_uuids.reset_index(drop=True)
+st.sidebar.metric('Nombre de fiches:',len(selected_uuids_))
+#elif checkbox2:
+#    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
+#    if len(selection_group)==0:
+#        selection_group = liste_OHMs
+#    selected_uuids = df_complet['Identifiant'][df_complet['GroupeEtMention'].isin(selection_group)]
+#    selected_uuids_ = selected_uuids.reset_index(drop=True)
+#    st.sidebar.metric('Nombre de fiches:',len(selected_uuids_))
+#else:
+#    selected_uuids_ = df_complet['Identifiant'].values
+#    st.sidebar.metric('Nombre de fiches:',len(selected_uuids_))
 
 
 ##################################################################################################

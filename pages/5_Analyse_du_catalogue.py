@@ -62,22 +62,22 @@ graph_ticks_color = 'gray'
 ########### FILTRE CATALOGUES ########################################################################################
 ######################################################################################################################
 
-liste_ZAs = ['zaa', 
-             'zaaj', 
-             'zal',
-             'zaar',
-             'zabr',
-             'zabri', 
-             'zaeu',
-             'zapygar', 
-             'zam', 
-             'zas',
-             'zah',
-             'zatu',
-             'zata',
-             'zarg',
-             'zacam',
-             'zapvs']
+liste_ZAs = [" Zone atelier Alpes", 
+             " Zone atelier arc jurassien", 
+             " Zone atelier Loire",
+             " Zone atelier Armorique",
+             " Zone atelier bassin du Rhône",
+             " Zone atelier Brest Iroise", 
+             " Zone atelier environnementale urbaine",
+             " Zone atelier Pyrénées Garonne", 
+             " Zone atelier bassin de la Moselle", 
+             " Zone Atelier Seine",
+             " Zone atelier Hwange",
+             "Zone atelier territoires uranifères",
+             " Zone Atelier Antarctique et Terres Australes",
+             " Zone Atelier Argonne",
+             " Zone Atelier Santé Environnement Camargue",
+             " Zone atelier Plaine et Val de Sèvre"]
 liste_OHMs = ['OHM Littoral méditerranéen',
               'OHM Oyapock','OHM Pyrénées - haut Vicdessos',
               'OHM Bassin Minier de Provence',
@@ -94,61 +94,60 @@ autres = ['Groupe exemple','Dynafor','InDoRES','Aucun groupe','RZA','DRIIHM']
 ########### SELECTION ZA #############################################################################################
 ######################################################################################################################
 ## Le choix est exclusif ##############################################################
-if 'checkbox1' not in st.session_state:
-    st.session_state.checkbox1 = False
-if 'checkbox2' not in st.session_state:
-    st.session_state.checkbox2 = False
+#if 'checkbox1' not in st.session_state:
+#    st.session_state.checkbox1 = False
+#if 'checkbox2' not in st.session_state:
+#    st.session_state.checkbox2 = False
 
-def handle_checkbox1_change():
-    if st.session_state.checkbox1:
-        st.session_state.checkbox2 = False
+#def handle_checkbox1_change():
+#    if st.session_state.checkbox1:
+#        st.session_state.checkbox2 = False
 
-def handle_checkbox2_change():
-    if st.session_state.checkbox2:
-        st.session_state.checkbox1 = False
+#def handle_checkbox2_change():
+#    if st.session_state.checkbox2:
+#        st.session_state.checkbox1 = False
 
-col1,col2 =st.sidebar.columns(2)
-choix_groupe_OHM = False
-with col1:
-    checkbox1 = st.checkbox("RZA", key='checkbox1', on_change=handle_checkbox1_change)
-with col2:
-    checkbox2 = st.checkbox("OHM", key='checkbox2', on_change=handle_checkbox2_change)
+#col1,col2 =st.sidebar.columns(2)
+#choix_groupe_OHM = False
+#with col1:
+#    checkbox1 = st.checkbox("RZA", key='checkbox1', on_change=handle_checkbox1_change)
+#with col2:
+#    checkbox2 = st.checkbox("OHM", key='checkbox2', on_change=handle_checkbox2_change)
 
 
-if checkbox2:
-    Selection_df = tableau[tableau['GroupeEtMention'].isin(liste_OHMs)]
-    Selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
-    if len(Selection_group)==0:
-        df_selected = Selection_df
-    else:
-        df_selected = Selection_df[Selection_df['GroupeEtMention'].isin(Selection_group)]
-    if len(Selection_group)==0:
-        st.sidebar.metric('Nombre de fiches:',len(Selection_df))
-    else:
-        st.sidebar.metric('Nombre de fiches:',len(df_selected))
+#if checkbox2:
+#    Selection_df = tableau[tableau['GroupeEtMention'].isin(liste_OHMs)]
+#    Selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
+#    if len(Selection_group)==0:
+#        df_selected = Selection_df
+#    else:
+#        df_selected = Selection_df[Selection_df['GroupeEtMention'].isin(Selection_group)]
+#    if len(Selection_group)==0:
+#        st.sidebar.metric('Nombre de fiches:',len(Selection_df))
+#    else:
+#        st.sidebar.metric('Nombre de fiches:',len(df_selected))
 
-elif checkbox1:
+#elif checkbox1:
     
-    Selection_df = tableau[tableau['GroupeEtMention'].isin(liste_ZAs)]
-    Selection_group = st.sidebar.multiselect('choix du groupe',options=liste_ZAs)
-    if len(Selection_group)==0:
-        df_selected = Selection_df
-    else:
-        df_selected = Selection_df[Selection_df['GroupeEtMention'].isin(Selection_group)]
-    if len(Selection_group)==0:
-        st.sidebar.metric('Nombre de fiches:',len(Selection_df))
-    else:
-        st.sidebar.metric('Nombre de fiches:',len(df_selected))
-
-else:
+Selection_df = tableau[tableau['GroupeEtMention'].isin(liste_ZAs)]
+Selection_group = st.sidebar.multiselect('Zones Ateliers',options=liste_ZAs)
+if len(Selection_group)==0:
+    df_selected = Selection_df
+    st.sidebar.metric('Nombre de fiches:',len(Selection_df))
     Catalogues_counts = tableau['GroupeEtMention'].value_counts()
-    df_selected = tableau
+else:
+    df_selected = Selection_df[Selection_df['GroupeEtMention'].isin(Selection_group)]
     st.sidebar.metric('Nombre de fiches:',len(df_selected))
+  
 
 ######################################################################################################################
 ########### TITRE GENERAL ############################################################################################
 ######################################################################################################################
 st.title(':grey[Visuels issus des métadonnées de Cat.InDoRes]')
+
+st.success("Si vous le souhaitez, filtrer la zone atelier ciblée (par défaut, tout le RZA) / LISTE DEROULANTE")
+st.success("Choisissez ci-dessous les informations que vous souhaitez visualiser) / CASE A COCHER")
+st.success("Pour certaines visualisations, vous pouvez utiliser la glissière temporelle à gauche) / FAIRE GLISSER LE CURSEUR")
 
 #adresse_catInDoRes = 'http://cat.indores.fr/geonetwork/srv/fre/catalog.search#/home'
 #s_adresse_catInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_catInDoRes}</p>"
