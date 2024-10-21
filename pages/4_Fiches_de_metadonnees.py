@@ -239,7 +239,7 @@ except:
 ###############################################################################################
 
 # Mot de passe pour faire des récupérations automatisées
-admin_pass = 'admin'
+admin_pass = 'admin38'
 admin_action = st.sidebar.text_input(label="Pour l'administrateur")
 
 ###############################################################################################

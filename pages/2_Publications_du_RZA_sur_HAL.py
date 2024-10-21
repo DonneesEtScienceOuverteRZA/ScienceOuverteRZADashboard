@@ -69,7 +69,7 @@ liste_ZAs_ = ["Zone atelier territoires uranifères",
 ###############################################################################################
 
 # Mot de passe pour faire des récupérations automatisées
-admin_pass = 'admin'
+admin_pass = 'admin38'
 admin_action = st.sidebar.text_input(label="Pour l'administrateur")
 
 if admin_action == admin_pass:

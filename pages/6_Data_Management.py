@@ -235,7 +235,7 @@ if len(Selection_ZA)!=0:
     ##########################################################################################
 
     # Mot de passe pour faire des récupérations automatisées
-    admin_pass = 'admin'
+    admin_pass = 'admin38'
     admin_action = st.sidebar.text_input(label="Pour l'administrateur")
 
 
@@ -341,11 +341,11 @@ if len(Selection_ZA)!=0:
             t_cataF2 = f"IDENTIF CONFORME"
             s_tcataF2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataF2}</p>"
             st.markdown(s_tcataF2,unsafe_allow_html=True)
-            fig_F2_counts = px.pie(values=[catalogue_F2_count_true,catalogue_F2_count_false], 
+            fig_F2_countsA = px.pie(values=[catalogue_F2_count_true,catalogue_F2_count_false], 
                     names=['True','False'])
-            fig_F2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_F2_countsA.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_F2_counts.update_layout(
+            fig_F2_countsA.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -354,17 +354,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_F2_counts,use_container_width=True)
+            st.plotly_chart(fig_F2_countsA,use_container_width=True, key='A1')
             
         with col2:
             t_cataI1 = f"FORMAT CONFORME"
             s_tcataI1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI1}</p>"
             st.markdown(s_tcataI1,unsafe_allow_html=True)
-            fig_I1_counts = px.pie(values=[catalogue_I1_count_true,catalogue_I1_count_false], 
+            fig_I1_countsA = px.pie(values=[catalogue_I1_count_true,catalogue_I1_count_false], 
                     names=['True','False'])
-            fig_I1_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_I1_countsA.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_I1_counts.update_layout(
+            fig_I1_countsA.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -373,17 +373,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_I1_counts,use_container_width=True)
+            st.plotly_chart(fig_I1_countsA,use_container_width=True,key='A2')
 
         with col3:
             t_cataI3 = f"MOTS CLES RENSEIGNES"
             s_tcataI3  = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI3 }</p>"
             st.markdown(s_tcataI3 ,unsafe_allow_html=True)
-            fig_I3_counts = px.pie(values=[catalogue_I3_count_true,catalogue_I3_count_false], 
+            fig_I3_countsA = px.pie(values=[catalogue_I3_count_true,catalogue_I3_count_false], 
                     names=['True','False'])
-            fig_I3_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_I3_countsA.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_I3_counts.update_layout(
+            fig_I3_countsA.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -392,17 +392,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_I3_counts,use_container_width=True)
+            st.plotly_chart(fig_I3_countsA,use_container_width=True,key='A3')
 
         with col4:
             t_cataI2 = f"THESAURUS RENSEIGNES"
             s_tcataI2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI2}</p>"
             st.markdown(s_tcataI2,unsafe_allow_html=True)
-            fig_I2_counts = px.pie(values=[catalogue_I2_count_true,catalogue_I3_count_false], 
+            fig_I2_countsA = px.pie(values=[catalogue_I2_count_true,catalogue_I3_count_false], 
                     names=['True','False'])
-            fig_I2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_I2_countsA.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_I2_counts.update_layout(
+            fig_I2_countsA.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -411,17 +411,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_I2_counts,use_container_width=True)
+            st.plotly_chart(fig_I2_countsA,use_container_width=True,key='A4')
 
         with col5:
             t_cataR1 = f"DROITS RENSEIGNES"
             s_tcataR1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR1}</p>"
             st.markdown(s_tcataR1,unsafe_allow_html=True)
-            fig_R1_counts = px.pie(values=[catalogue_R1_count_true,catalogue_R1_count_false], 
+            fig_R1_countsA = px.pie(values=[catalogue_R1_count_true,catalogue_R1_count_false], 
                     names=['True','False'])
-            fig_R1_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_R1_countsA.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_R1_counts.update_layout(
+            fig_R1_countsA.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -430,18 +430,18 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_R1_counts,use_container_width=True)
+            st.plotly_chart(fig_R1_countsA,use_container_width=True,key='A5')
 
 
         with col6:
             t_cataR2 = f"GENEALOGIE DECRITE"
             s_tcataR2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR2}</p>"
             st.markdown(s_tcataR2,unsafe_allow_html=True)
-            fig_R2_counts = px.pie(values=[catalogue_R2_count_true,catalogue_R2_count_false], 
+            fig_R2_countsA = px.pie(values=[catalogue_R2_count_true,catalogue_R2_count_false], 
                     names=['True','False'])
-            fig_R2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_R2_countsA.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_R2_counts.update_layout(
+            fig_R2_countsA.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -450,7 +450,7 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_R2_counts,use_container_width=True)
+            st.plotly_chart(fig_R2_countsA,use_container_width=True,key='A6')
 
     elif 1<len(Selection_ZA)<16:
         col1, col2 = st.columns([0.7,0.3])
@@ -504,11 +504,11 @@ if len(Selection_ZA)!=0:
             t_cataF2 = f"IDENTIF CONFORME"
             s_tcataF2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataF2}</p>"
             st.markdown(s_tcataF2,unsafe_allow_html=True)
-            fig_F2_counts = px.pie(values=[catalogue_F2_count_true,catalogue_F2_count_false], 
+            fig_F2_countsB = px.pie(values=[catalogue_F2_count_true,catalogue_F2_count_false], 
                     names=['True','False'])
-            fig_F2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_F2_countsB.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_F2_counts.update_layout(
+            fig_F2_countsB.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -517,17 +517,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_F2_counts,use_container_width=True)
+            st.plotly_chart(fig_F2_countsB,use_container_width=True,key="B1")
             
         with col2:
             t_cataI1 = f"FORMAT CONFORME"
             s_tcataI1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI1}</p>"
             st.markdown(s_tcataI1,unsafe_allow_html=True)
-            fig_I1_counts = px.pie(values=[catalogue_I1_count_true,catalogue_I1_count_false], 
+            fig_I1_countsB = px.pie(values=[catalogue_I1_count_true,catalogue_I1_count_false], 
                     names=['True','False'])
-            fig_I1_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_I1_countsB.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_I1_counts.update_layout(
+            fig_I1_countsB.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -536,17 +536,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_I1_counts,use_container_width=True)
+            st.plotly_chart(fig_I1_countsB,use_container_width=True,key="B2")
 
         with col3:
             t_cataI3 = f"MOTS CLES RENSEIGNES"
             s_tcataI3  = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI3 }</p>"
             st.markdown(s_tcataI3 ,unsafe_allow_html=True)
-            fig_I3_counts = px.pie(values=[catalogue_I3_count_true,catalogue_I3_count_false], 
+            fig_I3_countsB = px.pie(values=[catalogue_I3_count_true,catalogue_I3_count_false], 
                     names=['True','False'])
-            fig_I3_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_I3_countsB.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_I3_counts.update_layout(
+            fig_I3_countsB.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -555,17 +555,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_I3_counts,use_container_width=True)
+            st.plotly_chart(fig_I3_countsB,use_container_width=True,key="B3")
 
         with col4:
             t_cataI2 = f"THESAURUS RENSEIGNES"
             s_tcataI2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI2}</p>"
             st.markdown(s_tcataI2,unsafe_allow_html=True)
-            fig_I2_counts = px.pie(values=[catalogue_I2_count_true,catalogue_I3_count_false], 
+            fig_I2_countsB = px.pie(values=[catalogue_I2_count_true,catalogue_I3_count_false], 
                     names=['True','False'])
-            fig_I2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_I2_countsB.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_I2_counts.update_layout(
+            fig_I2_countsB.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -574,17 +574,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_I2_counts,use_container_width=True)
+            st.plotly_chart(fig_I2_countsB,use_container_width=True,key="B4")
 
         with col5:
             t_cataR1 = f"DROITS RENSEIGNES"
             s_tcataR1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR1}</p>"
             st.markdown(s_tcataR1,unsafe_allow_html=True)
-            fig_R1_counts = px.pie(values=[catalogue_R1_count_true,catalogue_R1_count_false], 
+            fig_R1_countsB = px.pie(values=[catalogue_R1_count_true,catalogue_R1_count_false], 
                     names=['True','False'])
-            fig_R1_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_R1_countsB.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_R1_counts.update_layout(
+            fig_R1_countsB.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -593,17 +593,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_R1_counts,use_container_width=True)
+            st.plotly_chart(fig_R1_countsB,use_container_width=True,key="B5")
 
         with col6:
             t_cataR2 = f"GENEALOGIE DECRITE"
             s_tcataR2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR2}</p>"
             st.markdown(s_tcataR2,unsafe_allow_html=True)
-            fig_R2_counts = px.pie(values=[catalogue_R2_count_true,catalogue_R2_count_false], 
+            fig_R2_countsB = px.pie(values=[catalogue_R2_count_true,catalogue_R2_count_false], 
                     names=['True','False'])
-            fig_R2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_R2_countsB.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_R2_counts.update_layout(
+            fig_R2_countsB.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -612,7 +612,7 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_R2_counts,use_container_width=True)
+            st.plotly_chart(fig_R2_countsB,use_container_width=True,key="B6")
 
     elif len(Selection_ZA)==16:
         col1, col2 = st.columns([0.7,0.3])
@@ -663,11 +663,11 @@ if len(Selection_ZA)!=0:
             t_cataF2 = f"IDENTIF CONFORME"
             s_tcataF2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataF2}</p>"
             st.markdown(s_tcataF2,unsafe_allow_html=True)
-            fig_F2_counts = px.pie(values=[catalogue_F2_count_true,catalogue_F2_count_false], 
+            fig_F2_countsC = px.pie(values=[catalogue_F2_count_true,catalogue_F2_count_false], 
                     names=['True','False'])
-            fig_F2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_F2_countsC.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_F2_counts.update_layout(
+            fig_F2_countsC.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -676,17 +676,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_F2_counts,use_container_width=True)
+            st.plotly_chart(fig_F2_countsC,use_container_width=True,key="C1")
             
         with col2:
             t_cataI1 = f"FORMAT CONFORME"
             s_tcataI1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI1}</p>"
             st.markdown(s_tcataI1,unsafe_allow_html=True)
-            fig_I1_counts = px.pie(values=[catalogue_I1_count_true,catalogue_I1_count_false], 
+            fig_I1_countsC = px.pie(values=[catalogue_I1_count_true,catalogue_I1_count_false], 
                     names=['True','False'])
-            fig_I1_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_I1_countsC.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_I1_counts.update_layout(
+            fig_I1_countsC.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -695,17 +695,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_I1_counts,use_container_width=True)
+            st.plotly_chart(fig_I1_countsC,use_container_width=True,key="C2")
 
         with col3:
             t_cataI3 = f"MOTS CLES RENSEIGNES"
             s_tcataI3  = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI3 }</p>"
             st.markdown(s_tcataI3 ,unsafe_allow_html=True)
-            fig_I3_counts = px.pie(values=[catalogue_I3_count_true,catalogue_I3_count_false], 
+            fig_I3_countsC = px.pie(values=[catalogue_I3_count_true,catalogue_I3_count_false], 
                     names=['True','False'])
-            fig_I3_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_I3_countsC.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_I3_counts.update_layout(
+            fig_I3_countsC.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -714,17 +714,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_I3_counts,use_container_width=True)
+            st.plotly_chart(fig_I3_countsC,use_container_width=True,key="C3")
 
         with col4:
             t_cataI2 = f"THESAURUS RENSEIGNES"
             s_tcataI2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI2}</p>"
             st.markdown(s_tcataI2,unsafe_allow_html=True)
-            fig_I2_counts = px.pie(values=[catalogue_I2_count_true,catalogue_I3_count_false], 
+            fig_I2_countsC = px.pie(values=[catalogue_I2_count_true,catalogue_I3_count_false], 
                     names=['True','False'])
-            fig_I2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_I2_countsC.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_I2_counts.update_layout(
+            fig_I2_countsC.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -733,17 +733,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_I2_counts,use_container_width=True)
+            st.plotly_chart(fig_I2_countsC,use_container_width=True,key="C4")
 
         with col5:
             t_cataR1 = f"DROITS RENSEIGNES"
             s_tcataR1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR1}</p>"
             st.markdown(s_tcataR1,unsafe_allow_html=True)
-            fig_R1_counts = px.pie(values=[catalogue_R1_count_true,catalogue_R1_count_false], 
+            fig_R1_countsC = px.pie(values=[catalogue_R1_count_true,catalogue_R1_count_false], 
                     names=['True','False'])
-            fig_R1_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_R1_countsC.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_R1_counts.update_layout(
+            fig_R1_countsC.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -752,17 +752,17 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_R1_counts,use_container_width=True)
+            st.plotly_chart(fig_R1_countsC,use_container_width=True,key="C5")
 
         with col6:
             t_cataR2 = f"GENEALOGIE DECRITE"
             s_tcataR2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR2}</p>"
             st.markdown(s_tcataR2,unsafe_allow_html=True)
-            fig_R2_counts = px.pie(values=[catalogue_R2_count_true,catalogue_R2_count_false], 
+            fig_R2_countsC = px.pie(values=[catalogue_R2_count_true,catalogue_R2_count_false], 
                     names=['True','False'])
-            fig_R2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+            fig_R2_countsC.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-            fig_R2_counts.update_layout(
+            fig_R2_countsC.update_layout(
                         legend=dict(
                             orientation="h",  # Horizontal legend
                             yanchor="bottom", # Anchor at the bottom
@@ -771,4 +771,4 @@ if len(Selection_ZA)!=0:
                             x=0.5
                         )
                     )
-            st.plotly_chart(fig_R2_counts,use_container_width=True)
+            st.plotly_chart(fig_R2_countsC,use_container_width=True,key="C6")
