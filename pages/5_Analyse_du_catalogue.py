@@ -5,6 +5,7 @@ from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 import re
+import csv
 from collections import Counter
 from plotly.subplots import make_subplots
 from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues, traitement_standards, traitement_formats, traitement_orgas,traitement_droits,traitement_contacts
@@ -45,7 +46,7 @@ st.markdown("""
 ######################################################################################################################
 zoom = 4
 
-tableau = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_complet.csv", index_col=[0])
+tableau = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_complet.csv", index_col=[0], encoding='utf-8')
 
 colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0']
 graph_title_font = 24
